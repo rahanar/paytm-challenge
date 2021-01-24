@@ -1,3 +1,21 @@
+# Coding challenge:
+
+To calculate moving average of N elements, I defined the following:
+
+1. `MovingAverageInterface` - the interface defines three method (`getMovingAverage`, `addElement`, `getElements`), that each concrete class has to implemnet to calculate a moving average and give access to the underlying data structure.
+
+2. `SimpleMovingAverage` class - the class implements `MovingAverageInterface` interface with all required methods. The class uses simple moving average algorithm to calculate moving average of N elements. Source: https://en.wikipedia.org/wiki/Moving_average#Simple_moving_average_(boxcar_filter)
+
+   I used `queue` as an underlying data structure for the algorithm. The reason is `queue` provides efficient opperation on each side of the queue (removing item at the beginning and appending to the end), which fits to the use case of the simple moving average algorigthm.
+
+   In python, queue is effciently implemented by `deque` class by utilizing doubly linkedlist.
+
+3. `TestSimpleMovingAverage` - unit tests for the implmenetation of the SimpleMovingAverage class.
+
+To run unit tests, you will need python 3 (at least 3.7.5). The following command will invoke the tests:
+
+`python simple_moving_average_unittest.py`
+
 # Design
 
 ![](./backend.png)
